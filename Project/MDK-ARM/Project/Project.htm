@@ -3,9 +3,9 @@
 <title>Static Call Graph - [Project\Project.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image Project\Project.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6240002: Last Updated: Tue May 19 20:17:08 2026
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6240002: Last Updated: Tue May 19 22:56:51 2026
 <BR><P>
-<H3>Maximum Stack Usage =        624 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
+<H3>Maximum Stack Usage =        616 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
 __rt_entry_main &rArr; main &rArr; Filter_Learn &rArr; arm_cfft_f32 &rArr; arm_cfft_radix8by4_f32 &rArr; arm_radix8_butterfly_f32
 <P>
@@ -494,7 +494,7 @@ Global Symbols
 <P><STRONG><a name="[209]"></a>__rt_entry_postsh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000009))
 
 <P><STRONG><a name="[d9]"></a>__rt_entry_main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000D))
-<BR><BR>[Stack]<UL><LI>Max Depth = 624 + Unknown Stack Size
+<BR><BR>[Stack]<UL><LI>Max Depth = 616 + Unknown Stack Size
 <LI>Call Chain = __rt_entry_main &rArr; main &rArr; Filter_Learn &rArr; arm_cfft_f32 &rArr; arm_cfft_radix8by4_f32 &rArr; arm_radix8_butterfly_f32
 </UL>
 <BR>[Calls]<UL><LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
@@ -1769,8 +1769,8 @@ Global Symbols
 <P><STRONG><a name="[95]"></a>ExitRun0Mode</STRONG> (Thumb, 40 bytes, Stack size 0 bytes, system_stm32h7xx.o(.text.ExitRun0Mode))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32h743xx.o(.text)
 </UL>
-<P><STRONG><a name="[13e]"></a>Filter_Learn</STRONG> (Thumb, 1008 bytes, Stack size 128 bytes, lms.o(.text.Filter_Learn))
-<BR><BR>[Stack]<UL><LI>Max Depth = 592 + Unknown Stack Size
+<P><STRONG><a name="[13e]"></a>Filter_Learn</STRONG> (Thumb, 1116 bytes, Stack size 120 bytes, lms.o(.text.Filter_Learn))
+<BR><BR>[Stack]<UL><LI>Max Depth = 584 + Unknown Stack Size
 <LI>Call Chain = Filter_Learn &rArr; arm_cfft_f32 &rArr; arm_cfft_radix8by4_f32 &rArr; arm_radix8_butterfly_f32
 </UL>
 <BR>[Calls]<UL><LI><a href="#[13f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
@@ -1964,11 +1964,11 @@ Global Symbols
 <P><STRONG><a name="[166]"></a>HAL_DMA_Init</STRONG> (Thumb, 2402 bytes, Stack size 64 bytes, stm32h7xx_hal_dma.o(.text.HAL_DMA_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 84<LI>Call Chain = HAL_DMA_Init &rArr; DMA_CheckFifoParam
 </UL>
-<BR>[Calls]<UL><LI><a href="#[171]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_CalcDMAMUXRequestGenBaseAndMask
+<BR>[Calls]<UL><LI><a href="#[13a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
+<LI><a href="#[171]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_CalcDMAMUXRequestGenBaseAndMask
 <LI><a href="#[170]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_CalcDMAMUXChannelBaseAndMask
 <LI><a href="#[16f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_CalcBaseAndBitshift
 <LI><a href="#[16e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_CheckFifoParam
-<LI><a href="#[13a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_MspInit
 <LI><a href="#[15f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_MspInit
@@ -2600,8 +2600,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[146]"></a>Math_GetFreqAmp</STRONG> (Thumb, 144 bytes, Stack size 20 bytes, my_math.o(.text.Math_GetFreqAmp))
-<BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = Math_GetFreqAmp
+<P><STRONG><a name="[146]"></a>Math_GetFreqAmp</STRONG> (Thumb, 150 bytes, Stack size 24 bytes, my_math.o(.text.Math_GetFreqAmp))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = Math_GetFreqAmp
 </UL>
 <BR>[Called By]<UL><LI><a href="#[13e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Filter_Learn
 </UL>
@@ -2865,7 +2865,7 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> _printf_char_file.o(.text)
 </UL>
 <P><STRONG><a name="[da]"></a>main</STRONG> (Thumb, 808 bytes, Stack size 32 bytes, main.o(.text.main))
-<BR><BR>[Stack]<UL><LI>Max Depth = 624 + Unknown Stack Size
+<BR><BR>[Stack]<UL><LI>Max Depth = 616 + Unknown Stack Size
 <LI>Call Chain = main &rArr; Filter_Learn &rArr; arm_cfft_f32 &rArr; arm_cfft_radix8by4_f32 &rArr; arm_radix8_butterfly_f32
 </UL>
 <BR>[Calls]<UL><LI><a href="#[13e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Filter_Learn

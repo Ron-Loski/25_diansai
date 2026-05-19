@@ -233,8 +233,8 @@ float Math_GetFreqAmp(float *FFT_OUT, uint16_t Sample_Size)
 		}
 	}
 
-	return 1024000 * MaxIndex / Sample_Size ;
-//	return 2.0f * MaxAmp / (float)Sample_Size;
+//	return 1024000 * MaxIndex / Sample_Size ;
+	return 2.0f * MaxAmp / (float)Sample_Size;
 }
 
 /*

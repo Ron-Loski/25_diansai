@@ -4,18 +4,19 @@
 #include "stm32h7xx_hal.h"
 #include "tim.h"
 #include "adc.h"
-#include "My_Math.h"
 #include "AD9833.h"
+#include "My_Math.h"
+
 
 #define Sweep_Num	50
 
-typedef enum {
-	Filter_Unknown = 0,
-	Filter_LowPass,
-	Filter_HighPass,
-	Filter_BandPass,
-	Filter_BandStop
-} FilterType_t;
+//typedef enum {
+//	Filter_Unknown = 0,
+//	Filter_LowPass,
+//	Filter_HighPass,
+//	Filter_BandPass,
+//	Filter_BandStop
+//} FilterType_t;
 
 typedef struct {
 	float Mu;			// LMS步长，越大收敛越快，但过大容易振荡
@@ -28,8 +29,6 @@ typedef struct {
 	float *Coeff;		// 滤波器系数数组，由外部提供，长度为Order
 	float *State;		// 输入延时状态数组，由外部提供，长度为Order
 }LMS_t;
-
-extern volatile uint8_t adc_done;
 
 extern uint16_t ADC1_Buff[];
 extern float ADC1_FFTIN[];
@@ -54,6 +53,6 @@ void LMS_UpdateBlock(LMS_t *p, float *Input, float *Ref, float *Out,
                      float *Error, uint16_t Size);
 void LMS_UpdateAdcBlock(LMS_t *p, uint16_t *Input, uint16_t *Ref, float *Out,
                         float *Error, uint16_t Size);
-FilterType_t Filter_Learn(void);
+
 
 #endif

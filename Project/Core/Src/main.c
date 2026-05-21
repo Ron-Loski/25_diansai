@@ -19,6 +19,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "adc.h"
+#include "dac.h"
 #include "dma.h"
 #include "spi.h"
 #include "tim.h"
@@ -33,6 +34,7 @@
 #include "AD9833.h"
 #include "My_Math.h"
 #include "LMS.h"
+#include "PID.h"
 
 /* USER CODE END Includes */
 
@@ -63,8 +65,9 @@ uint8_t  USART1_RxBuff[USART1_Rx_DMA_Size];	//串口接收缓冲数组
 
 volatile uint8_t adc1_done = 0;	//ADC转换完成标志位
 volatile uint8_t adc2_done = 0;	//ADC2转换完成标志位
+static uint32_t Base1_CNT = 1;
 
-volatile uint8_t FilterType = 0;
+volatile uint8_t FilterType = 0;	//滤波器类型
 
 uint16_t ADC1_Buff[Sample_Size] = {0};
 float ADC1_FFTIN[Double_size] = {0};
@@ -75,6 +78,22 @@ uint16_t ADC2_Buff[Sample_Size] = {0};
 float ADC2_FFTIN[Double_size] = {0};
 float ADC2_FFTOUT[Half_size] = {0};
 float ADC2_Amp[Sweep_Num - 1] = {0};		//ADC2扫频各个频率分量的幅值
+
+PID_t Base1_Require = {
+	.Kp = 0,
+	.Ki = 0,
+	.Kd = 0,
+};
+
+uint16_t maxindex1 = 0;					//测试变量
+float maxamp1 = 0;
+uint16_t maxindex2 = 0;
+float maxamp2 = 0;
+uint16_t FREQ1;
+uint16_t FREQ2;
+float AMP1;
+float AMP2;
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -87,8 +106,9 @@ static void MPU_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+static uint8_t Flag = 0;
 
-
+FilterType_t Filter_Learn(void);
 /* USER CODE END 0 */
 
 /**
@@ -133,12 +153,15 @@ int main(void)
   MX_SPI2_Init();
   MX_SPI3_Init();
   MX_ADC2_Init();
+  MX_DAC1_Init();
   /* USER CODE BEGIN 2 */
   arm_cfft_init_f32(&cfft_handler, Sample_Size);
   arm_cfft_init_f32(&cfft_handler_512, Sample_Size / 2);
   
   AD98331_Init();
   AD98332_Init();
+  
+  PID_Init(&Base1_Require);
     
   /* USER CODE END 2 */
 
@@ -146,35 +169,77 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   HAL_UARTEx_ReceiveToIdle_DMA(&huart1, USART1_RxBuff, USART1_Rx_DMA_Size);
   __HAL_DMA_DISABLE_IT(huart1.hdmarx, DMA_IT_HT);
-//  AD98332_SetFrequencyQuick(50000, AD9833_OUT_SINUS);
+  
+//  AD98332_SetFrequencyQuick(1000, AD9833_OUT_SINUS);
+//  HAL_DAC_SetValue(&hdac1, DAC_CHANNEL_1, DAC_ALIGN_12B_R, 400);
+//  HAL_DAC_Start(&hdac1, DAC_CHANNEL_1);
+//  HAL_ADC_Start_DMA(&hadc1, (uint32_t *)ADC1_Buff, Sample_Size);
+//  HAL_ADC_Start_DMA(&hadc2, (uint32_t *)ADC2_Buff, Sample_Size);
+//  HAL_TIM_Base_Start(&htim3);
 
-  HAL_ADC_Start_DMA(&hadc1, (uint32_t *)ADC1_Buff, Sample_Size);
-  HAL_ADC_Start_DMA(&hadc2, (uint32_t *)ADC2_Buff, Sample_Size);
-  HAL_TIM_Base_Start(&htim3);
+  uint8_t Type = Math_JudegeFilter();
+
   while (1)
   {
-	  if (adc1_done == 1 && adc2_done == 1)
-	  {
-		  HAL_TIM_Base_Stop(&htim3);
-		  
-		  adc1_done = 0;
-		  adc2_done = 0;
-		  
-		  FilterType = Filter_Learn();
-		  
-		  
-//		  for (uint16_t i = 0; i < Sample_Size; i ++)
+//	  if (adc1_done == 1  && adc2_done == 1)
+//	  {
+//		  HAL_TIM_Base_Stop(&htim3);
+//		  
+//		  adc1_done = 0;
+//		  adc2_done = 0;		  		  
+//		  
+//		  
+//		  Math_PreFFT(ADC1_Buff, ADC1_FFTIN, Sample_Size);
+//		  Math_PreFFT(ADC2_Buff, ADC2_FFTIN, Sample_Size);
+//		  
+//		  arm_cfft_f32(&cfft_handler, ADC1_FFTIN, 0, 1);
+//		  arm_cfft_f32(&cfft_handler, ADC2_FFTIN, 0, 1);
+//		  
+//		  arm_cmplx_mag_f32(ADC1_FFTIN, ADC1_FFTOUT, Sample_Size / 2);
+//		  arm_cmplx_mag_f32(ADC2_FFTIN, ADC2_FFTOUT, Sample_Size / 2);
+//  
+//		  
+//		  maxindex1 = 0;
+//		  maxamp1 = 0;
+//		  maxindex2 = 0;
+//		  maxamp2 = 0;
+//		  
+//		  for (uint16_t i = 1; i < Sample_Size / 2; i ++)
 //		  {
-//			  printf("%d,%d\r\n", ADC1_Buff[i], ADC2_Buff[i]);
+//			  if (ADC1_FFTOUT[i] > maxamp1){
+//				  maxamp1 = ADC1_FFTOUT[i];
+//				  maxindex1 = i;
+//			  }
+//			  if (ADC2_FFTOUT[i] > maxamp2){
+//				  maxamp2 = ADC2_FFTOUT[i];
+//				  maxindex2 = i;
+//			  }
+//			  printf("%f,%f\r\n", ADC1_FFTOUT[i], ADC2_FFTOUT[i]);
 //		  }
-		  
-		  HAL_ADC_Start_DMA(&hadc1, (uint32_t *)ADC1_Buff, Sample_Size);
-		  HAL_ADC_Start_DMA(&hadc2, (uint32_t *)ADC2_Buff, Sample_Size);
-		  HAL_TIM_Base_Start(&htim3);
-	  }
-
-	   
-
+//		  FREQ1 = 1024000 * maxindex1 / Sample_Size;
+//		  FREQ2 = 1024000 * maxindex2 / Sample_Size;
+//		  AMP1 = 4.0f * ADC1_FFTOUT[maxindex1] / Sample_Size;
+//		  AMP2 = 4.0f * ADC2_FFTOUT[maxindex2] / Sample_Size;
+//	  	    
+//		  if (!Flag)
+//		  {
+//			  Flag ++;
+//			  float Value = (400.0f * log10(2.0f / AMP2) + 150.0f) / 3300.0f * 4095.0f;
+//			  HAL_DAC_SetValue(&hdac1, DAC_CHANNEL_1, DAC_ALIGN_12B_R, Value);
+//			  HAL_DAC_Start(&hdac1, DAC_CHANNEL_1);
+//		  }
+////		  float Error_Voltage = AMP2 - 2.0f;
+////		  Base1_Require.Actual = Error_Voltage;
+////		  PID_Update(&Base1_Require);
+////		  
+////		  HAL_DAC_Stop(&hdac1, DAC_CHANNEL_1);
+////		  HAL_DAC_SetValue(&hdac1, DAC_CHANNEL_1, DAC_ALIGN_12B_R, Base1_Require.Out);
+////		  HAL_DAC_Start(&hdac1, DAC_CHANNEL_1);
+//		  
+//		  HAL_ADC_Start_DMA(&hadc1, (uint32_t *)ADC1_Buff, Sample_Size);
+//		  HAL_ADC_Start_DMA(&hadc2, (uint32_t *)ADC2_Buff, Sample_Size);
+//		  HAL_TIM_Base_Start(&htim3);
+//	  }
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

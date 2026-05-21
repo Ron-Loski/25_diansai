@@ -213,7 +213,7 @@ void Math_PreFFT(uint16_t *ADC_Buff, float *FFT_IN, uint16_t Sample_Size)	//注�
 {
 	for (uint16_t i = 0; i < Sample_Size; i ++)
 	{
-		FFT_IN[i * 2] = ADC_Buff[i] / 65535.0f;
+		FFT_IN[i * 2] = ADC_Buff[i] / 65535.0f * 3.3f;
 		FFT_IN[i * 2 + 1] = 0.0f;
 	}
 }
@@ -321,7 +321,113 @@ void Math_Feedback_FFTAndExtractPhase(SignalPara_t *pSignal, float *FFT_IN,
     pSignal->Phase = atan2f(Imag, Real) * 180.0f / PI;    // 单位:度, 范围[-180, 180]
 }
 
+static float Gain[Sweep_NUM] = {0.0f};
 
+FilterType_t Math_JudegeFilter(void)
+{
+	
+	float LowSum = 0;
+	float HighSum = 0;
+	float LowGain = 0;
+	float HighGain = 0;
+	
+	uint16_t MaxIndex1 = 0;
+	float MaxAmp1 = 0;
+	uint16_t MaxIndex2 = 0;
+	float MaxAmp2 = 0;
+	
+
+	
+	for (uint16_t i = 1; i <= Sweep_NUM; i ++)
+	{
+		uint32_t Freq = i * 1000;
+		uint16_t Freq1 = 0;
+		uint16_t Freq2 = 0;
+		
+		AD98332_SetFrequencyQuick(Freq, AD9833_OUT_SINUS);
+		
+		HAL_ADC_Start_DMA(&hadc1, (uint32_t *)ADC1_Buff, 1024);
+		HAL_ADC_Start_DMA(&hadc2, (uint32_t *)ADC2_Buff, 1024);
+		HAL_TIM_Base_Start(&htim3);
+		
+		while(adc1_done == 0 || adc2_done == 0)
+		{
+			
+		}
+			HAL_TIM_Base_Stop(&htim3);
+			adc1_done = 0;
+			adc2_done = 0;
+			
+			Math_PreFFT(ADC1_Buff, ADC1_FFTIN, 1024);
+		    Math_PreFFT(ADC2_Buff, ADC2_FFTIN, 1024);
+		    
+		    arm_cfft_f32(&cfft_handler, ADC1_FFTIN, 0, 1);
+		    arm_cfft_f32(&cfft_handler, ADC2_FFTIN, 0, 1);
+		    
+		    arm_cmplx_mag_f32(ADC1_FFTIN, ADC1_FFTOUT, 512);
+		    arm_cmplx_mag_f32(ADC2_FFTIN, ADC2_FFTOUT, 512);
+			
+			MaxIndex1 = 0;
+			MaxAmp1 = 0.0f;
+			MaxIndex2 = 0;
+			MaxAmp2 = 0.0f;
+			
+			for (uint16_t j = 1; j < 512; j ++)
+		    {
+			     if (ADC1_FFTOUT[j] > MaxAmp1){
+				    MaxAmp1 = ADC1_FFTOUT[j];
+				    MaxIndex1 = j;
+			     }
+			     if (ADC2_FFTOUT[j] > MaxAmp2){
+				    MaxAmp2 = ADC2_FFTOUT[j];
+				    MaxIndex2 = j;
+			     }
+//			     prjntf("%f,%f\r\n", ADC1_FFTOUT[j], ADC2_FFTOUT[j]);
+		    }
+			
+			Gain[i - 1] = MaxAmp2 / MaxAmp1;
+			Freq1 = 1024000 * MaxIndex1 / 1024;
+			Freq2 = 1024000 * MaxIndex2 / 1024;
+			printf("%f,%d,%d\r\n", Gain[i - 1], Freq1, Freq2);
+			
+	}
+	
+	
+	float GainSum1 = 0;
+	
+	for (uint16_t i = 0; i < 10; i ++)	//前段低频取10，高频同理
+	{
+		GainSum1 += Gain[i];
+	}
+	LowGain = GainSum1 / 10.0f;
+	
+	float GainSum2 = 0;
+	
+	for (uint16_t i = Sweep_NUM - 10; i < Sweep_NUM; i ++)
+	{
+		GainSum2 += Gain[i];
+	}
+	HighGain = GainSum2 / 10.0f;
+	
+	if (20.0f * log10f(HighGain / LowGain) < -10.0f){
+		return Filter_LowPass;
+	}
+	else if (20.0f * log10f(HighGain / LowGain) > 10.0f){
+		return Filter_HighPass;
+	}
+	else{
+		float Temp = 0;
+		for (uint16_t i = 0; i < 50; i ++)
+		{
+			if (Gain[i + 1] > Gain[i])
+				Temp ++;
+		}
+		if (Temp > 40)	//取40个点做判断
+			return Filter_BandPass;
+		else
+			return Filter_BandStop;
+	}
+}
 
 
 

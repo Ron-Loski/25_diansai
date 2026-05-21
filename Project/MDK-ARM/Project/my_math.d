@@ -19,6 +19,8 @@ project/my_math.o: ..\Core\Src\MY_Math.c ..\Core\Inc\My_Math.h \
   ..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_adc.h \
   ..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_ll_adc.h \
   ..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_adc_ex.h \
+  ..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_dac.h \
+  ..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_dac_ex.h \
   ..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_flash.h \
   ..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_flash_ex.h \
   ..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_hsem.h \
@@ -34,4 +36,5 @@ project/my_math.o: ..\Core\Src\MY_Math.c ..\Core\Inc\My_Math.h \
   ..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_uart_ex.h \
   ..\Middlewares\ST\ARM\DSP\Inc\arm_math.h \
   ..\Drivers\CMSIS\Include\cmsis_compiler.h ..\Core\Inc\usart.h \
-  ..\Core\Inc\main.h
+  ..\Core\Inc\main.h ..\Core\Inc\AD9833.h ..\Core\Inc\spi.h \
+  ..\Core\Inc\tim.h ..\Core\Inc\adc.h ..\Core\Inc\LMS.h

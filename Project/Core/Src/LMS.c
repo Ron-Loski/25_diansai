@@ -290,10 +290,15 @@ FilterType_t Filter_Learn(void)
 		arm_cfft_f32(&cfft_handler, ADC2_FFTIN, 0, 1);
         arm_cmplx_mag_f32(ADC2_FFTIN, ADC2_FFTOUT, HalfSize);
 
-		ADC1_Amp[i - 1] = Math_GetFreqAmp(ADC1_FFTOUT, SampleSize);
-		ADC2_Amp[i - 1] = Math_GetFreqAmp(ADC2_FFTOUT, SampleSize);
+		for (uint16_t i = 1; i < SampleSize / 2; i ++)
+		{
+			printf("%f,%f\r\n", ADC1_FFTOUT[i], ADC2_FFTOUT[i]);
+		}
+		
+//		ADC1_Amp[i - 1] = Math_GetFreqAmp(ADC1_FFTOUT, SampleSize);
+//		ADC2_Amp[i - 1] = Math_GetFreqAmp(ADC2_FFTOUT, SampleSize);
 
-		printf("%f,%f\r\n", ADC1_Amp[i - 1], ADC2_Amp[i - 1]);
+//		printf("%f,%f\r\n", ADC1_Amp[i - 1], ADC2_Amp[i - 1]);
 
 	}
 

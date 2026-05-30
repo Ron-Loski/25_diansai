@@ -1,0 +1,101 @@
+module DAC904_WriteTEST(
+input clk,
+input rstn,
+
+output clk_driver,	//模块时钟管脚
+output [13:0]IO_data	//模块数据管脚
+);
+
+wire areset, pll165m_lockedPIN, pll_66M, pll_165M;
+assign areset = ~rstn;
+/*
+锁相环：
+用于产生165M时钟
+*/
+pll165m	U0_pll165m_inst (
+	.areset ( areset ),
+	.inclk0 ( clk ),
+	.c0 ( pll_65M ),	//66M
+	.c1 ( pll_165M ),	//165M
+	.locked ( pll165m_lockedPIN )
+	);
+
+//更改输出波形
+/*
+将"rom_14B_Sin.v"中的，这段代码，三选一，选择对应的输出波形，重新编译，下载到FPGA板，用示波器即可观察到DAC模块输出
+波形数据也可自定义，\rtl\ROM\ROM_14B_SIN路径下的MIF文件中，存储的就是自定义波形数据，也可根据自己需要更改
+//		altsyncram_component.init_file = "../../ROM/ROM_14B_SIN/ROM_14B_SQU.mif",	//调用方波波形
+//		altsyncram_component.init_file = "../../ROM/ROM_14B_SIN/ROM_14B_TRIANG.mif",	//调用三角波波形
+		altsyncram_component.init_file = "../../ROM/ROM_14B_SIN/ROM_14B_SIN.mif",	//调用正弦波波形
+*/
+
+//以下频率控制字，均在165MSPS,32位相位累加器下
+//选择以下任一参数，到U1的PhaseStep参数，即可获得参数对应的输出频率
+parameter freCtrlWord_1k = 32'd26030;
+parameter freCtrlWord_100k = 32'd2603010;
+parameter freCtrlWord_1M  = 32'd26030104;
+parameter freCtrlWord_10M = 32'd260301048;
+parameter freCtrlWord_20M = 32'd520602096;
+parameter freCtrlWord_30M = 32'd780903144;
+parameter freCtrlWord_40M = 32'd1041204192;
+
+parameter freCtrlWord_45M = 32'd1171354717;
+parameter freCtrlWord_50M = 32'd1301505241;
+parameter freCtrlWord_55M = 32'd1431655765;
+parameter freCtrlWord_60M = 32'd1561806289;
+parameter freCtrlWord_65M = 32'd1691956813;
+parameter freCtrlWord_70M = 32'd1822107337;
+
+wire [13:0]romAddr;
+/*
+模块名: PhaseAccumulator 
+功  能：DDS相位累加器功能，由相位累加器步进字，控制输出信号频率
+输  入：CLK : 输入，时钟
+				RSTn：输入，复位信号
+				PhaseStep：输入， 相位累加器步进字(频率控制字)
+输  出：MemAddr： 输出，波形ROM码表坐标索引值
+备  注：PhaseStep = 输出频率 / 165M * (2^32)
+	  例如，需要输出1M频率， 那么PhaseStep = 1000000/165000000*(2^32)=26030104;
+*/
+PhaseAccumulator U1_PhaseAccumulator(
+   .CLK(pll_165M), 	//CLK : FROM U0，输入，时钟
+	 .RSTn(rstn),			//RSTn：FROM外界，输入，复位信号
+	.PhaseStep(freCtrlWord_1M),//FROM编程，PhaseStep：输入， 相位累加器步进字(频率控制字)
+	.MemAddr(romAddr),//TO U2，MemAddr： 输出，波形ROM码表坐标索引值
+);
+
+wire[13:0] dacData;
+/*
+模块名: rom_14B_Sin 
+功  能：从ROM中，由romAddr获取存储的数值
+输  入：address : 输入，ROM地址
+				clock：输入，时钟
+输  出：q：输出， 取出的值
+备  注：无
+*/
+rom_14B_Sin	U2_rom_14B_Sin(
+	.address ( romAddr ),//FROM U1, 输入,ROM地址
+	.clock ( pll_165M ), //FROM U0,时钟
+	.q ( dacData )			 //TO U3, 输出,取出的值
+	);
+
+assign clk_driver = pll_165M;
+wire [13:0]w_IO_Data;
+/*
+模块名: DAC904_WriteModule 
+功  能：将数值输出到DAC904模块的管脚上
+输  入：
+				DAC_CLKneg：输入，时钟
+				RSTn：输入，复位信号
+				inputdata：输入，待输出数值
+输  出：outputData：输出，接DAC904模块数据管脚
+备  注：无
+*/
+DAC904_WriteModule U3_DAC904_WriteModule(
+	 .DAC_CLKneg(pll_165M),	//FROM U0, 
+	 .RSTn(rstn),	//RSTn：FROM外界，输入，复位信号
+	 .inputdata(dacData),	//FROM U2, 输入，待输出数值
+	 .outputData(IO_data)	//TO IO口， 输出，接DAC904模块数据管脚
+);
+
+endmodule

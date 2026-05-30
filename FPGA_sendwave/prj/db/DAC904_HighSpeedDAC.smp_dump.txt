@@ -1,0 +1,17 @@
+
+State Machine - |DAC904_WriteTEST|uart_frame_index
+Name uart_frame_index.110 uart_frame_index.101 uart_frame_index.100 uart_frame_index.011 uart_frame_index.010 uart_frame_index.001 uart_frame_index.000 
+uart_frame_index.000 0 0 0 0 0 0 0 
+uart_frame_index.001 0 0 0 0 0 1 1 
+uart_frame_index.010 0 0 0 0 1 0 1 
+uart_frame_index.011 0 0 0 1 0 0 1 
+uart_frame_index.100 0 0 1 0 0 0 1 
+uart_frame_index.101 0 1 0 0 0 0 1 
+uart_frame_index.110 1 0 0 0 0 0 1 
+
+State Machine - |DAC904_WriteTEST|UartRx:U4_UartRx|state
+Name state.S_STOP state.S_DATA state.S_START state.S_IDLE 
+state.S_IDLE 0 0 0 0 
+state.S_START 0 0 1 1 
+state.S_DATA 0 1 0 1 
+state.S_STOP 1 0 0 1 

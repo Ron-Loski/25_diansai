@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Sat May 30 22:04:56 2026
+Quartus II 64-Bit Version : 13.1.0 Build 162 10/23/2013 SJ Full Version
+Revision Name : DAC904_HighSpeedDAC
+Top-level Entity Name : DAC904_WriteTEST
+Family : Cyclone IV E
+Total logic elements : 387
+    Total combinational functions : 214
+    Dedicated logic registers : 311
+Total registers : 311
+Total pins : 18
+Total virtual pins : 0
+Total memory bits : 229,376
+Embedded Multiplier 9-bit elements : 2
+Total PLLs : 1

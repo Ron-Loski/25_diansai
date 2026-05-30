@@ -1,0 +1,109 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2011 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II 64-Bit
+# Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Full Version
+# Date created = 17:18:54  July 26, 2021
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		DAC904_HighSpeedDAC_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone IV E"
+set_global_assignment -name DEVICE EP4CE10F17C8
+set_global_assignment -name TOP_LEVEL_ENTITY DAC904_WriteTEST
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION "11.0 SP1"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "17:18:54  JULY 26, 2021"
+set_global_assignment -name LAST_QUARTUS_VERSION 13.1
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
+set_global_assignment -name ENABLE_INIT_DONE_OUTPUT OFF
+set_global_assignment -name USE_CONFIGURATION_DEVICE ON
+set_global_assignment -name CYCLONEIII_CONFIGURATION_DEVICE EPCS64
+set_global_assignment -name CRC_ERROR_OPEN_DRAIN OFF
+set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -rise
+set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -fall
+set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -rise
+set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -fall
+set_location_assignment PIN_M2 -to clk
+set_location_assignment PIN_M1 -to rstn
+set_location_assignment PIN_A8 -to mcu_uart_rx
+set_location_assignment PIN_E6 -to clk_driver
+set_location_assignment PIN_K6 -to IO_data[0]
+set_location_assignment PIN_D3 -to IO_data[1]
+set_location_assignment PIN_D5 -to IO_data[2]
+set_location_assignment PIN_B13 -to IO_data[3]
+set_location_assignment PIN_D6 -to IO_data[4]
+set_location_assignment PIN_E7 -to IO_data[5]
+set_location_assignment PIN_A13 -to IO_data[6]
+set_location_assignment PIN_M7 -to IO_data[7]
+set_location_assignment PIN_E8 -to IO_data[8]
+set_location_assignment PIN_M6 -to IO_data[9]
+set_location_assignment PIN_N5 -to IO_data[10]
+set_location_assignment PIN_N11 -to IO_data[11]
+set_location_assignment PIN_T12 -to IO_data[12]
+set_location_assignment PIN_M11 -to IO_data[13]
+set_global_assignment -name ENABLE_CONFIGURATION_PINS OFF
+set_global_assignment -name ENABLE_NCE_PIN OFF
+set_global_assignment -name ENABLE_BOOT_SEL_PIN OFF
+set_global_assignment -name CYCLONEII_RESERVE_NCEO_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_global_assignment -name DEVICE_FILTER_PACKAGE FBGA
+set_global_assignment -name DEVICE_FILTER_PIN_COUNT 256
+set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 8
+
+set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (Verilog)"
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
+set_global_assignment -name EDA_NETLIST_WRITER_OUTPUT_DIR "D:/diansai2025/DAC904_HighSpeedDAC_V1.6-SinExample/prj/simulation/qsim/" -section_id eda_simulation
+set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST ON -section_id eda_simulation
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to keyIn[4]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to keyIn[3]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to keyIn[2]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to keyIn[1]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to keyIn[0]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR OFF -to rstn
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to keyAF
+set_instance_assignment -name IO_STANDARD "2.5 V" -to clk_driver
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to mcu_uart_rx
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to mcu_uart_rx
+set_global_assignment -name VERILOG_FILE ../rtl/PhaseAccumulator.V
+set_global_assignment -name VERILOG_FILE ../rtl/UartRx.V
+set_global_assignment -name VERILOG_FILE ../rtl/DAC904_WriteTEST.V
+set_global_assignment -name VERILOG_FILE ../rtl/DAC904_WriteModule.V
+set_global_assignment -name QIP_FILE ../rtl/ROM/ROM_14B_SIN/rom_14B_Sin.qip
+set_global_assignment -name QIP_FILE ../rtl/PLL/pll165m/pll165m.qip
+set_global_assignment -name VECTOR_WAVEFORM_FILE uart.vwf
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

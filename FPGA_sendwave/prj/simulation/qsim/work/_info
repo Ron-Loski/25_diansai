@@ -1,0 +1,85 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\diansai2025\DAC904_HighSpeedDAC_V1.6-SinExample\prj\simulation\qsim
+vUartRx
+Z1 !s100 zO83ml1CR8W3;XQ3nJ;:O1
+Z2 In=dUAfY_90ZAZY_mZaAYn3
+Z3 VL`mF0^R?:Q?>kR>=AmNR93
+Z4 dD:\diansai2025\DAC904_HighSpeedDAC_V1.6-SinExample\prj\simulation\qsim
+Z5 w1779981784
+Z6 8DAC904_HighSpeedDAC.vo
+Z7 FDAC904_HighSpeedDAC.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|DAC904_HighSpeedDAC.vo|
+Z10 o-work work -O0
+Z11 n@uart@rx
+!i10b 1
+!s85 0
+Z12 !s108 1779981785.327000
+Z13 !s107 DAC904_HighSpeedDAC.vo|
+!s101 -O0
+vUartRx_vlg_check_tst
+!i10b 1
+Z14 !s100 V`AaNCn<>Q6B9IaRAFd<O1
+Z15 IV5>eXc>4419aK8DK<]OV:3
+Z16 VG_^`C6`z7bZ2WMO>3KgmO2
+R4
+Z17 w1779981782
+Z18 8uart.vwf.vt
+Z19 Fuart.vwf.vt
+L0 61
+R8
+r1
+!s85 0
+31
+Z20 !s108 1779981785.456000
+Z21 !s107 uart.vwf.vt|
+Z22 !s90 -work|work|uart.vwf.vt|
+!s101 -O0
+R10
+Z23 n@uart@rx_vlg_check_tst
+vUartRx_vlg_sample_tst
+!i10b 1
+Z24 !s100 PCZo2ASL^B14G[X8IRO6h2
+Z25 I30fVaP^LIaQahJZaLmN@[1
+Z26 V<VWQT=HeL]_UjmXUIzFdF1
+R4
+R17
+R18
+R19
+L0 29
+R8
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R10
+Z27 n@uart@rx_vlg_sample_tst
+vUartRx_vlg_vec_tst
+!i10b 1
+!s100 i@=EUT]9faZUoHTY=Ec^o1
+I_Pk5VVg5N0[dRhGG8IQS92
+Z28 VYRe>9foAa]jeWHidTVEaj2
+R4
+R17
+R18
+R19
+Z29 L0 308
+R8
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R10
+Z30 n@uart@rx_vlg_vec_tst

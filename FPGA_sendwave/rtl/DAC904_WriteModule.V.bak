@@ -1,0 +1,24 @@
+module DAC904_WriteModule(
+	 DAC_CLKneg,
+	 RSTn,
+	 inputdata, 
+	 
+	 outputData
+);
+
+input RSTn;
+input[13:0] inputdata;
+input DAC_CLKneg;
+
+output[13:0] outputData;
+/***************************/
+reg[13:0] rOutputData;
+always @ ( negedge DAC_CLKneg or negedge RSTn )
+if( !RSTn )
+   rOutputData <= 14'd0;
+else
+   rOutputData <= inputdata;
+   
+assign outputData = rOutputData;
+
+endmodule

@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="DAC904_HighSpeedDAC">
+		<CBX_INST_ENTRY INSTANCE_NAME="|DAC904_WriteTEST|lpm_mult:Mult0" CBX_FILE_NAME="mult_16t.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|DAC904_WriteTEST|pll165m:U0_pll165m_inst|altpll:altpll_component" CBX_FILE_NAME="pll165m_altpll.v"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|DAC904_WriteTEST|rom_14B_Sin:U2_rom_14B_Sin|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_vhb1.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

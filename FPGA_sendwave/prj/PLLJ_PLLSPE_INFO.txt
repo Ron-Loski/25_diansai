@@ -1,0 +1,5 @@
+PLL_Name	pll165m:U0_pll165m_inst|altpll:altpll_component|pll165m_altpll:auto_generated|pll1
+PLLJITTER	53
+PLLSPEmax	84
+PLLSPEmin	-53
+

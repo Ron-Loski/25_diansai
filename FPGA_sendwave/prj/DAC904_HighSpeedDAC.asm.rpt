@@ -1,5 +1,5 @@
 Assembler report for DAC904_HighSpeedDAC
-Sat May 30 22:05:10 2026
+Sat Jun 13 22:53:54 2026
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Full Version
 
 
@@ -10,8 +10,8 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Full Version
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: D:/diansai2025/DAC904_HighSpeedDAC_V1.6-SinExample/prj/DAC904_HighSpeedDAC.sof
-  6. Assembler Device Options: D:/diansai2025/DAC904_HighSpeedDAC_V1.6-SinExample/prj/DAC904_HighSpeedDAC.pof
+  5. Assembler Device Options: D:/diansai2025/25_diansai/FPGA_sendwave/prj/DAC904_HighSpeedDAC.sof
+  6. Assembler Device Options: D:/diansai2025/25_diansai/FPGA_sendwave/prj/DAC904_HighSpeedDAC.pof
   7. Assembler Messages
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Sat May 30 22:05:10 2026 ;
+; Assembler Status      ; Successful - Sat Jun 13 22:53:54 2026 ;
 ; Revision Name         ; DAC904_HighSpeedDAC                   ;
 ; Top-level Entity Name ; DAC904_WriteTEST                      ;
 ; Family                ; Cyclone IV E                          ;
@@ -78,37 +78,37 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+----------+---------------+
 
 
-+--------------------------------------------------------------------------------+
-; Assembler Generated Files                                                      ;
-+--------------------------------------------------------------------------------+
-; File Name                                                                      ;
-+--------------------------------------------------------------------------------+
-; D:/diansai2025/DAC904_HighSpeedDAC_V1.6-SinExample/prj/DAC904_HighSpeedDAC.sof ;
-; D:/diansai2025/DAC904_HighSpeedDAC_V1.6-SinExample/prj/DAC904_HighSpeedDAC.pof ;
-+--------------------------------------------------------------------------------+
++---------------------------------------------------------------------+
+; Assembler Generated Files                                           ;
++---------------------------------------------------------------------+
+; File Name                                                           ;
++---------------------------------------------------------------------+
+; D:/diansai2025/25_diansai/FPGA_sendwave/prj/DAC904_HighSpeedDAC.sof ;
+; D:/diansai2025/25_diansai/FPGA_sendwave/prj/DAC904_HighSpeedDAC.pof ;
++---------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: D:/diansai2025/DAC904_HighSpeedDAC_V1.6-SinExample/prj/DAC904_HighSpeedDAC.sof ;
-+----------------+-----------------------------------------------------------------------------------------+
-; Option         ; Setting                                                                                 ;
-+----------------+-----------------------------------------------------------------------------------------+
-; Device         ; EP4CE10F17C8                                                                            ;
-; JTAG usercode  ; 0x0043FBFE                                                                              ;
-; Checksum       ; 0x0043FBFE                                                                              ;
-+----------------+-----------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------+
+; Assembler Device Options: D:/diansai2025/25_diansai/FPGA_sendwave/prj/DAC904_HighSpeedDAC.sof ;
++----------------+------------------------------------------------------------------------------+
+; Option         ; Setting                                                                      ;
++----------------+------------------------------------------------------------------------------+
+; Device         ; EP4CE10F17C8                                                                 ;
+; JTAG usercode  ; 0x00440A4B                                                                   ;
+; Checksum       ; 0x00440A4B                                                                   ;
++----------------+------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: D:/diansai2025/DAC904_HighSpeedDAC_V1.6-SinExample/prj/DAC904_HighSpeedDAC.pof ;
-+--------------------+-------------------------------------------------------------------------------------+
-; Option             ; Setting                                                                             ;
-+--------------------+-------------------------------------------------------------------------------------+
-; Device             ; EPCS64                                                                              ;
-; JTAG usercode      ; 0x00000000                                                                          ;
-; Checksum           ; 0x7DABFE42                                                                          ;
-; Compression Ratio  ; 2                                                                                   ;
-+--------------------+-------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------+
+; Assembler Device Options: D:/diansai2025/25_diansai/FPGA_sendwave/prj/DAC904_HighSpeedDAC.pof ;
++--------------------+--------------------------------------------------------------------------+
+; Option             ; Setting                                                                  ;
++--------------------+--------------------------------------------------------------------------+
+; Device             ; EPCS64                                                                   ;
+; JTAG usercode      ; 0x00000000                                                               ;
+; Checksum           ; 0x7DB6E968                                                               ;
+; Compression Ratio  ; 2                                                                        ;
++--------------------+--------------------------------------------------------------------------+
 
 
 +--------------------+
@@ -117,14 +117,14 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Full Version
-    Info: Processing started: Sat May 30 22:05:08 2026
+    Info: Processing started: Sat Jun 13 22:53:51 2026
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off DAC904_HighSpeedDAC -c DAC904_HighSpeedDAC
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 4601 megabytes
-    Info: Processing ended: Sat May 30 22:05:10 2026
-    Info: Elapsed time: 00:00:02
+    Info: Processing ended: Sat Jun 13 22:53:54 2026
+    Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:00
 
 

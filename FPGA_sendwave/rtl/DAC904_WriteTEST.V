@@ -4,7 +4,8 @@ module DAC904_WriteTEST(
 	input mcu_uart_rx,
 
 	output clk_driver,		// DAC时钟输出
-	output [13:0]IO_data		// DAC数据输出
+	output [13:0]IO_data,		// DAC数据输出
+	output dac_gnd			// DAC GND（恒输出0）
 	);
 
 	wire areset, pll165m_lockedPIN, pll_65M, pll_165M;
@@ -194,6 +195,7 @@ module DAC904_WriteTEST(
 		);
 
 	assign clk_driver = pll_165M;
+	assign dac_gnd = 1'b0;
 	wire [13:0]w_IO_Data;
 	wire [13:0]dacOutputData;
 	reg signed [14:0] dacCenteredReg;

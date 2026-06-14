@@ -1,5 +1,5 @@
 Fitter report for DAC904_HighSpeedDAC
-Sat May 30 22:05:06 2026
+Sat Jun 13 22:53:49 2026
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Full Version
 
 
@@ -76,18 +76,18 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Sat May 30 22:05:06 2026       ;
+; Fitter Status                      ; Successful - Sat Jun 13 22:53:49 2026       ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Full Version ;
 ; Revision Name                      ; DAC904_HighSpeedDAC                         ;
 ; Top-level Entity Name              ; DAC904_WriteTEST                            ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE10F17C8                                ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 351 / 10,320 ( 3 % )                        ;
+; Total logic elements               ; 348 / 10,320 ( 3 % )                        ;
 ;     Total combinational functions  ; 214 / 10,320 ( 2 % )                        ;
 ;     Dedicated logic registers      ; 280 / 10,320 ( 3 % )                        ;
 ; Total registers                    ; 281                                         ;
-; Total pins                         ; 18 / 180 ( 10 % )                           ;
+; Total pins                         ; 19 / 180 ( 11 % )                           ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 229,376 / 423,936 ( 54 % )                  ;
 ; Embedded Multiplier 9-bit elements ; 2 / 46 ( 4 % )                              ;
@@ -192,6 +192,7 @@ applicable agreement for further details.
 ; IO_data[11] ; Missing drive strength and slew rate ;
 ; IO_data[12] ; Missing drive strength and slew rate ;
 ; IO_data[13] ; Missing drive strength and slew rate ;
+; dac_gnd     ; Missing drive strength and slew rate ;
 +-------------+--------------------------------------+
 
 
@@ -256,8 +257,8 @@ applicable agreement for further details.
 ; Type                ; Total [A + B]      ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+--------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                    ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 604 ) ; 0.00 % ( 0 / 604 )         ; 0.00 % ( 0 / 604 )       ;
-;     -- Achieved     ; 0.00 % ( 0 / 604 ) ; 0.00 % ( 0 / 604 )         ; 0.00 % ( 0 / 604 )       ;
+;     -- Requested    ; 0.00 % ( 0 / 606 ) ; 0.00 % ( 0 / 606 )         ; 0.00 % ( 0 / 606 )       ;
+;     -- Achieved     ; 0.00 % ( 0 / 606 ) ; 0.00 % ( 0 / 606 )         ; 0.00 % ( 0 / 606 )       ;
 ;                     ;                    ;                            ;                          ;
 ; Routing (by net)    ;                    ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )   ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -280,7 +281,7 @@ applicable agreement for further details.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 594 )    ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 596 )    ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 10 )     ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -288,7 +289,7 @@ applicable agreement for further details.
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in D:/diansai2025/DAC904_HighSpeedDAC_V1.6-SinExample/prj/DAC904_HighSpeedDAC.pin.
+The pin-out file can be found in D:/diansai2025/25_diansai/FPGA_sendwave/prj/DAC904_HighSpeedDAC.pin.
 
 
 +--------------------------------------------------------------------------+
@@ -296,16 +297,16 @@ The pin-out file can be found in D:/diansai2025/DAC904_HighSpeedDAC_V1.6-SinExam
 +---------------------------------------------+----------------------------+
 ; Resource                                    ; Usage                      ;
 +---------------------------------------------+----------------------------+
-; Total logic elements                        ; 351 / 10,320 ( 3 % )       ;
-;     -- Combinational with no register       ; 71                         ;
-;     -- Register only                        ; 137                        ;
-;     -- Combinational with a register        ; 143                        ;
+; Total logic elements                        ; 348 / 10,320 ( 3 % )       ;
+;     -- Combinational with no register       ; 68                         ;
+;     -- Register only                        ; 134                        ;
+;     -- Combinational with a register        ; 146                        ;
 ;                                             ;                            ;
 ; Logic element usage by number of LUT inputs ;                            ;
 ;     -- 4 input functions                    ; 68                         ;
 ;     -- 3 input functions                    ; 75                         ;
 ;     -- <=2 input functions                  ; 71                         ;
-;     -- Register only                        ; 137                        ;
+;     -- Register only                        ; 134                        ;
 ;                                             ;                            ;
 ; Logic elements by mode                      ;                            ;
 ;     -- normal mode                          ; 168                        ;
@@ -315,9 +316,9 @@ The pin-out file can be found in D:/diansai2025/DAC904_HighSpeedDAC_V1.6-SinExam
 ;     -- Dedicated logic registers            ; 280 / 10,320 ( 3 % )       ;
 ;     -- I/O registers                        ; 1 / 852 ( < 1 % )          ;
 ;                                             ;                            ;
-; Total LABs:  partially or completely used   ; 26 / 645 ( 4 % )           ;
+; Total LABs:  partially or completely used   ; 28 / 645 ( 4 % )           ;
 ; Virtual pins                                ; 0                          ;
-; I/O pins                                    ; 18 / 180 ( 10 % )          ;
+; I/O pins                                    ; 19 / 180 ( 11 % )          ;
 ;     -- Clock pins                           ; 1 / 3 ( 33 % )             ;
 ;     -- Dedicated input pins                 ; 0 / 9 ( 0 % )              ;
 ;                                             ;                            ;
@@ -333,10 +334,10 @@ The pin-out file can be found in D:/diansai2025/DAC904_HighSpeedDAC_V1.6-SinExam
 ; ASMI blocks                                 ; 0 / 1 ( 0 % )              ;
 ; Impedance control blocks                    ; 0 / 4 ( 0 % )              ;
 ; Average interconnect usage (total/H/V)      ; 1% / 1% / 1%               ;
-; Peak interconnect usage (total/H/V)         ; 3% / 3% / 4%               ;
+; Peak interconnect usage (total/H/V)         ; 3% / 3% / 3%               ;
 ; Maximum fan-out                             ; 282                        ;
 ; Highest non-global fan-out                  ; 44                         ;
-; Total fan-out                               ; 2223                       ;
+; Total fan-out                               ; 2222                       ;
 ; Average fan-out                             ; 3.29                       ;
 +---------------------------------------------+----------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
@@ -350,16 +351,16 @@ The pin-out file can be found in D:/diansai2025/DAC904_HighSpeedDAC_V1.6-SinExam
 +---------------------------------------------+---------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                 ; Low                            ;
 ;                                             ;                     ;                                ;
-; Total logic elements                        ; 351 / 10320 ( 3 % ) ; 0 / 10320 ( 0 % )              ;
-;     -- Combinational with no register       ; 71                  ; 0                              ;
-;     -- Register only                        ; 137                 ; 0                              ;
-;     -- Combinational with a register        ; 143                 ; 0                              ;
+; Total logic elements                        ; 348 / 10320 ( 3 % ) ; 0 / 10320 ( 0 % )              ;
+;     -- Combinational with no register       ; 68                  ; 0                              ;
+;     -- Register only                        ; 134                 ; 0                              ;
+;     -- Combinational with a register        ; 146                 ; 0                              ;
 ;                                             ;                     ;                                ;
 ; Logic element usage by number of LUT inputs ;                     ;                                ;
 ;     -- 4 input functions                    ; 68                  ; 0                              ;
 ;     -- 3 input functions                    ; 75                  ; 0                              ;
 ;     -- <=2 input functions                  ; 71                  ; 0                              ;
-;     -- Register only                        ; 137                 ; 0                              ;
+;     -- Register only                        ; 134                 ; 0                              ;
 ;                                             ;                     ;                                ;
 ; Logic elements by mode                      ;                     ;                                ;
 ;     -- normal mode                          ; 168                 ; 0                              ;
@@ -369,10 +370,10 @@ The pin-out file can be found in D:/diansai2025/DAC904_HighSpeedDAC_V1.6-SinExam
 ;     -- Dedicated logic registers            ; 280 / 10320 ( 3 % ) ; 0 / 10320 ( 0 % )              ;
 ;     -- I/O registers                        ; 2                   ; 0                              ;
 ;                                             ;                     ;                                ;
-; Total LABs:  partially or completely used   ; 26 / 645 ( 4 % )    ; 0 / 645 ( 0 % )                ;
+; Total LABs:  partially or completely used   ; 28 / 645 ( 4 % )    ; 0 / 645 ( 0 % )                ;
 ;                                             ;                     ;                                ;
 ; Virtual pins                                ; 0                   ; 0                              ;
-; I/O pins                                    ; 18                  ; 0                              ;
+; I/O pins                                    ; 19                  ; 0                              ;
 ; Embedded Multiplier 9-bit elements          ; 2 / 46 ( 4 % )      ; 0 / 46 ( 0 % )                 ;
 ; Total memory bits                           ; 229376              ; 0                              ;
 ; Total RAM block bits                        ; 258048              ; 0                              ;
@@ -387,7 +388,7 @@ The pin-out file can be found in D:/diansai2025/DAC904_HighSpeedDAC_V1.6-SinExam
 ;     -- Registered Output Connections        ; 0                   ; 0                              ;
 ;                                             ;                     ;                                ;
 ; Internal Connections                        ;                     ;                                ;
-;     -- Total Connections                    ; 2252                ; 178                            ;
+;     -- Total Connections                    ; 2251                ; 178                            ;
 ;     -- Registered Connections               ; 1186                ; 0                              ;
 ;                                             ;                     ;                                ;
 ; External Connections                        ;                     ;                                ;
@@ -396,7 +397,7 @@ The pin-out file can be found in D:/diansai2025/DAC904_HighSpeedDAC_V1.6-SinExam
 ;                                             ;                     ;                                ;
 ; Partition Interface                         ;                     ;                                ;
 ;     -- Input Ports                          ; 3                   ; 2                              ;
-;     -- Output Ports                         ; 15                  ; 1                              ;
+;     -- Output Ports                         ; 16                  ; 1                              ;
 ;     -- Bidir Ports                          ; 0                   ; 0                              ;
 ;                                             ;                     ;                                ;
 ; Registered Ports                            ;                     ;                                ;
@@ -431,21 +432,22 @@ The pin-out file can be found in D:/diansai2025/DAC904_HighSpeedDAC_V1.6-SinExam
 +-------------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+---------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+----------------------+----------------------+---------------------+
 ; Name        ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Output Register ; Output Enable Register ; Power Up High ; Slew Rate ; PCI I/O Enabled ; Open Drain ; TRI Primitive ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Termination                       ; Termination Control Block ; Output Buffer Pre-emphasis ; Voltage Output Differential ; Location assigned by ; Output Enable Source ; Output Enable Group ;
 +-------------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+---------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+----------------------+----------------------+---------------------+
-; IO_data[0]  ; K6    ; 2        ; 0            ; 9            ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; IO_data[10] ; N5    ; 3        ; 7            ; 0            ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; IO_data[11] ; N11   ; 4        ; 30           ; 0            ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; IO_data[12] ; T12   ; 4        ; 25           ; 0            ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; IO_data[13] ; M11   ; 4        ; 32           ; 0            ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; IO_data[1]  ; D3    ; 8        ; 1            ; 24           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; IO_data[2]  ; D5    ; 8        ; 3            ; 24           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; IO_data[3]  ; B13   ; 7        ; 30           ; 24           ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; IO_data[4]  ; D6    ; 8        ; 3            ; 24           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; IO_data[5]  ; E7    ; 8        ; 7            ; 24           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; IO_data[6]  ; A13   ; 7        ; 30           ; 24           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; IO_data[7]  ; M7    ; 3        ; 9            ; 0            ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; IO_data[8]  ; E8    ; 8        ; 13           ; 24           ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; IO_data[9]  ; M6    ; 3        ; 7            ; 0            ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; clk_driver  ; E6    ; 8        ; 7            ; 24           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
+; IO_data[0]  ; D5    ; 8        ; 3            ; 24           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
+; IO_data[10] ; K5    ; 2        ; 0            ; 6            ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
+; IO_data[11] ; L6    ; 2        ; 0            ; 9            ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
+; IO_data[12] ; L3    ; 2        ; 0            ; 7            ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
+; IO_data[13] ; E7    ; 8        ; 7            ; 24           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
+; IO_data[1]  ; E6    ; 8        ; 7            ; 24           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
+; IO_data[2]  ; D3    ; 8        ; 1            ; 24           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
+; IO_data[3]  ; T12   ; 4        ; 25           ; 0            ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
+; IO_data[4]  ; C3    ; 8        ; 1            ; 24           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
+; IO_data[5]  ; G5    ; 1        ; 0            ; 19           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
+; IO_data[6]  ; K8    ; 3        ; 9            ; 0            ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
+; IO_data[7]  ; L7    ; 3        ; 11           ; 0            ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
+; IO_data[8]  ; J6    ; 2        ; 0            ; 10           ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
+; IO_data[9]  ; K6    ; 2        ; 0            ; 9            ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
+; clk_driver  ; N3    ; 3        ; 1            ; 0            ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
+; dac_gnd     ; B8    ; 8        ; 16           ; 24           ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 +-------------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+---------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+----------------------+----------------------+---------------------+
 
 
@@ -466,9 +468,8 @@ The pin-out file can be found in D:/diansai2025/DAC904_HighSpeedDAC_V1.6-SinExam
 ; H12      ; MSEL1                       ; -                        ; -                       ; Dedicated Programming Pin ;
 ; G12      ; MSEL2                       ; -                        ; -                       ; Dedicated Programming Pin ;
 ; G12      ; MSEL3                       ; -                        ; -                       ; Dedicated Programming Pin ;
-; E8       ; DIFFIO_T10n, DATA2          ; Use as regular IO        ; IO_data[8]              ; Dual Purpose Pin          ;
-; E7       ; DATA5                       ; Use as regular IO        ; IO_data[5]              ; Dual Purpose Pin          ;
-; E6       ; DATA6                       ; Use as regular IO        ; clk_driver              ; Dual Purpose Pin          ;
+; E7       ; DATA5                       ; Use as regular IO        ; IO_data[13]             ; Dual Purpose Pin          ;
+; E6       ; DATA6                       ; Use as regular IO        ; IO_data[1]              ; Dual Purpose Pin          ;
 +----------+-----------------------------+--------------------------+-------------------------+---------------------------+
 
 
@@ -477,13 +478,13 @@ The pin-out file can be found in D:/diansai2025/DAC904_HighSpeedDAC_V1.6-SinExam
 +----------+-----------------+---------------+--------------+
 ; I/O Bank ; Usage           ; VCCIO Voltage ; VREF Voltage ;
 +----------+-----------------+---------------+--------------+
-; 1        ; 4 / 17 ( 24 % ) ; 2.5V          ; --           ;
-; 2        ; 3 / 19 ( 16 % ) ; 2.5V          ; --           ;
+; 1        ; 5 / 17 ( 29 % ) ; 2.5V          ; --           ;
+; 2        ; 7 / 19 ( 37 % ) ; 2.5V          ; --           ;
 ; 3        ; 3 / 26 ( 12 % ) ; 2.5V          ; --           ;
-; 4        ; 3 / 27 ( 11 % ) ; 2.5V          ; --           ;
+; 4        ; 1 / 27 ( 4 % )  ; 2.5V          ; --           ;
 ; 5        ; 0 / 25 ( 0 % )  ; 2.5V          ; --           ;
 ; 6        ; 0 / 14 ( 0 % )  ; 2.5V          ; --           ;
-; 7        ; 2 / 26 ( 8 % )  ; 2.5V          ; --           ;
+; 7        ; 0 / 26 ( 0 % )  ; 2.5V          ; --           ;
 ; 8        ; 7 / 26 ( 27 % ) ; 2.5V          ; --           ;
 +----------+-----------------+---------------+--------------+
 
@@ -505,7 +506,7 @@ The pin-out file can be found in D:/diansai2025/DAC904_HighSpeedDAC_V1.6-SinExam
 ; A10      ; 168        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; A11      ; 161        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; A12      ; 159        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; A13      ; 153        ; 7        ; IO_data[6]                                                ; output ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
+; A13      ; 153        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; A14      ; 155        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; A15      ; 167        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; A16      ;            ; 7        ; VCCIO7                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
@@ -516,18 +517,18 @@ The pin-out file can be found in D:/diansai2025/DAC904_HighSpeedDAC_V1.6-SinExam
 ; B5       ; 195        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; B6       ; 189        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; B7       ; 184        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; B8       ; 178        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; B8       ; 178        ; 8        ; dac_gnd                                                   ; output ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; B9       ; 176        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; B10      ; 169        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; B11      ; 162        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; B12      ; 160        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; B13      ; 154        ; 7        ; IO_data[3]                                                ; output ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
+; B13      ; 154        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; B14      ; 156        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; B15      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; B16      ; 141        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; C1       ; 5          ; 1        ; ~ALTERA_ASDO_DATA1~ / RESERVED_INPUT_WITH_WEAK_PULLUP     ; input  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; On           ;
 ; C2       ; 4          ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; C3       ; 202        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; C3       ; 202        ; 8        ; IO_data[4]                                                ; output ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; C4       ;            ; 8        ; VCCIO8                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; C5       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; C6       ; 187        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
@@ -543,10 +544,10 @@ The pin-out file can be found in D:/diansai2025/DAC904_HighSpeedDAC_V1.6-SinExam
 ; C16      ; 146        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; D1       ; 8          ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; D2       ; 7          ; 1        ; ~ALTERA_FLASH_nCE_nCSO~ / RESERVED_INPUT_WITH_WEAK_PULLUP ; input  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; On           ;
-; D3       ; 203        ; 8        ; IO_data[1]                                                ; output ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
+; D3       ; 203        ; 8        ; IO_data[2]                                                ; output ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; D4       ; 0          ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; D5       ; 198        ; 8        ; IO_data[2]                                                ; output ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
-; D6       ; 199        ; 8        ; IO_data[4]                                                ; output ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
+; D5       ; 198        ; 8        ; IO_data[0]                                                ; output ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
+; D6       ; 199        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; D7       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; D8       ; 180        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; D9       ; 173        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -562,9 +563,9 @@ The pin-out file can be found in D:/diansai2025/DAC904_HighSpeedDAC_V1.6-SinExam
 ; E3       ;            ; 1        ; VCCIO1                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; E4       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; E5       ; 1          ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; E6       ; 191        ; 8        ; clk_driver                                                ; output ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
-; E7       ; 190        ; 8        ; IO_data[5]                                                ; output ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
-; E8       ; 181        ; 8        ; IO_data[8]                                                ; output ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
+; E6       ; 191        ; 8        ; IO_data[1]                                                ; output ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
+; E7       ; 190        ; 8        ; IO_data[13]                                               ; output ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
+; E8       ; 181        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; E9       ; 174        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; E10      ; 158        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; E11      ; 157        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -593,7 +594,7 @@ The pin-out file can be found in D:/diansai2025/DAC904_HighSpeedDAC_V1.6-SinExam
 ; G2       ; 13         ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; G3       ;            ; 1        ; VCCIO1                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; G4       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; G5       ; 10         ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+; G5       ; 10         ; 1        ; IO_data[5]                                                ; output ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; G6       ;            ;          ; VCCINT                                                    ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; G7       ;            ;          ; VCCINT                                                    ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; G8       ;            ;          ; VCCINT                                                    ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
@@ -627,7 +628,7 @@ The pin-out file can be found in D:/diansai2025/DAC904_HighSpeedDAC_V1.6-SinExam
 ; J3       ; 22         ; 1        ; ^nCE                                                      ;        ;              ;         ; --         ;                 ; --       ; --           ;
 ; J4       ; 21         ; 1        ; #TDO                                                      ; output ;              ;         ; --         ;                 ; --       ; --           ;
 ; J5       ; 20         ; 1        ; #TMS                                                      ; input  ;              ;         ; --         ;                 ; --       ; --           ;
-; J6       ; 29         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+; J6       ; 29         ; 2        ; IO_data[8]                                                ; output ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; J7       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; J8       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; J9       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
@@ -642,10 +643,10 @@ The pin-out file can be found in D:/diansai2025/DAC904_HighSpeedDAC_V1.6-SinExam
 ; K2       ; 32         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; K3       ;            ; 2        ; VCCIO2                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; K4       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; K5       ; 39         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; K6       ; 30         ; 2        ; IO_data[0]                                                ; output ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; K5       ; 39         ; 2        ; IO_data[10]                                               ; output ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; K6       ; 30         ; 2        ; IO_data[9]                                                ; output ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; K7       ;            ;          ; VCCINT                                                    ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
-; K8       ; 60         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; K8       ; 60         ; 3        ; IO_data[6]                                                ; output ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; K9       ; 76         ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; K10      ; 87         ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; K11      ; 110        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
@@ -656,11 +657,11 @@ The pin-out file can be found in D:/diansai2025/DAC904_HighSpeedDAC_V1.6-SinExam
 ; K16      ; 118        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; L1       ; 35         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; L2       ; 34         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; L3       ; 36         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
+; L3       ; 36         ; 2        ; IO_data[12]                                               ; output ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; L4       ; 40         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; L5       ;            ; --       ; VCCA1                                                     ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
-; L6       ; 31         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; L7       ; 65         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; L6       ; 31         ; 2        ; IO_data[11]                                               ; output ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; L7       ; 65         ; 3        ; IO_data[7]                                                ; output ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; L8       ; 68         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; L9       ; 77         ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; L10      ; 88         ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -675,12 +676,12 @@ The pin-out file can be found in D:/diansai2025/DAC904_HighSpeedDAC_V1.6-SinExam
 ; M3       ;            ; 2        ; VCCIO2                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; M4       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; M5       ;            ;          ; GNDA1                                                     ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; M6       ; 57         ; 3        ; IO_data[9]                                                ; output ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
-; M7       ; 59         ; 3        ; IO_data[7]                                                ; output ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
+; M6       ; 57         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; M7       ; 59         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; M8       ; 69         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; M9       ; 78         ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; M10      ; 93         ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; M11      ; 100        ; 4        ; IO_data[13]                                               ; output ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
+; M11      ; 100        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; M12      ; 103        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; M13      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; M14      ;            ; 5        ; VCCIO5                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
@@ -688,15 +689,15 @@ The pin-out file can be found in D:/diansai2025/DAC904_HighSpeedDAC_V1.6-SinExam
 ; M16      ; 125        ; 5        ; GND+                                                      ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
 ; N1       ; 38         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; N2       ; 37         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; N3       ; 45         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; N3       ; 45         ; 3        ; clk_driver                                                ; output ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; N4       ;            ;          ; VCCD_PLL1                                                 ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
-; N5       ; 55         ; 3        ; IO_data[10]                                               ; output ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
+; N5       ; 55         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; N6       ; 56         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; N7       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; N8       ; 70         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; N9       ; 79         ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; N10      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; N11      ; 94         ; 4        ; IO_data[11]                                               ; output ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
+; N11      ; 94         ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; N12      ; 101        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; N13      ; 102        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; N14      ; 106        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
@@ -745,7 +746,7 @@ The pin-out file can be found in D:/diansai2025/DAC904_HighSpeedDAC_V1.6-SinExam
 ; T9       ; 75         ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; T10      ; 81         ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; T11      ; 84         ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; T12      ; 86         ; 4        ; IO_data[12]                                               ; output ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
+; T12      ; 86         ; 4        ; IO_data[3]                                                ; output ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; T13      ; 92         ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; T14      ; 95         ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; T15      ; 96         ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -809,7 +810,7 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +-----------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+--------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                    ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                                                                                      ; Library Name ;
 +-----------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+--------------------------------------------------------------------------------------------------------------------------+--------------+
-; |DAC904_WriteTEST                             ; 351 (203)   ; 280 (191)                 ; 1 (1)         ; 229376      ; 28   ; 2            ; 0       ; 1         ; 18   ; 0            ; 71 (13)      ; 137 (127)         ; 143 (77)         ; |DAC904_WriteTEST                                                                                                        ; work         ;
+; |DAC904_WriteTEST                             ; 348 (202)   ; 280 (191)                 ; 1 (1)         ; 229376      ; 28   ; 2            ; 0       ; 1         ; 19   ; 0            ; 68 (11)      ; 134 (124)         ; 146 (79)         ; |DAC904_WriteTEST                                                                                                        ; work         ;
 ;    |DAC904_WriteModule:U3_DAC904_WriteModule| ; 14 (14)     ; 14 (14)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 14 (14)          ; |DAC904_WriteTEST|DAC904_WriteModule:U3_DAC904_WriteModule                                                               ; work         ;
 ;    |PhaseAccumulator:U1_PhaseAccumulator|     ; 32 (32)     ; 32 (32)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 32 (32)          ; |DAC904_WriteTEST|PhaseAccumulator:U1_PhaseAccumulator                                                                   ; work         ;
 ;    |UartRx:U4_UartRx|                         ; 87 (87)     ; 41 (41)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 46 (46)      ; 8 (8)             ; 33 (33)          ; |DAC904_WriteTEST|UartRx:U4_UartRx                                                                                       ; work         ;
@@ -818,10 +819,10 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ;    |pll165m:U0_pll165m_inst|                  ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |DAC904_WriteTEST|pll165m:U0_pll165m_inst                                                                                ; work         ;
 ;       |altpll:altpll_component|               ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |DAC904_WriteTEST|pll165m:U0_pll165m_inst|altpll:altpll_component                                                        ; work         ;
 ;          |pll165m_altpll:auto_generated|      ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |DAC904_WriteTEST|pll165m:U0_pll165m_inst|altpll:altpll_component|pll165m_altpll:auto_generated                          ; work         ;
-;    |rom_14B_Sin:U2_rom_14B_Sin|               ; 16 (0)      ; 2 (0)                     ; 0 (0)         ; 229376      ; 28   ; 0            ; 0       ; 0         ; 0    ; 0            ; 12 (0)       ; 2 (0)             ; 2 (0)            ; |DAC904_WriteTEST|rom_14B_Sin:U2_rom_14B_Sin                                                                             ; work         ;
-;       |altsyncram:altsyncram_component|       ; 16 (0)      ; 2 (0)                     ; 0 (0)         ; 229376      ; 28   ; 0            ; 0       ; 0         ; 0    ; 0            ; 12 (0)       ; 2 (0)             ; 2 (0)            ; |DAC904_WriteTEST|rom_14B_Sin:U2_rom_14B_Sin|altsyncram:altsyncram_component                                             ; work         ;
-;          |altsyncram_vhb1:auto_generated|     ; 16 (2)      ; 2 (2)                     ; 0 (0)         ; 229376      ; 28   ; 0            ; 0       ; 0         ; 0    ; 0            ; 12 (0)       ; 2 (2)             ; 2 (0)            ; |DAC904_WriteTEST|rom_14B_Sin:U2_rom_14B_Sin|altsyncram:altsyncram_component|altsyncram_vhb1:auto_generated              ; work         ;
-;             |mux_gob:mux2|                    ; 14 (14)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 2 (2)            ; |DAC904_WriteTEST|rom_14B_Sin:U2_rom_14B_Sin|altsyncram:altsyncram_component|altsyncram_vhb1:auto_generated|mux_gob:mux2 ; work         ;
+;    |rom_14B_Sin:U2_rom_14B_Sin|               ; 16 (0)      ; 2 (0)                     ; 0 (0)         ; 229376      ; 28   ; 0            ; 0       ; 0         ; 0    ; 0            ; 11 (0)       ; 2 (0)             ; 3 (0)            ; |DAC904_WriteTEST|rom_14B_Sin:U2_rom_14B_Sin                                                                             ; work         ;
+;       |altsyncram:altsyncram_component|       ; 16 (0)      ; 2 (0)                     ; 0 (0)         ; 229376      ; 28   ; 0            ; 0       ; 0         ; 0    ; 0            ; 11 (0)       ; 2 (0)             ; 3 (0)            ; |DAC904_WriteTEST|rom_14B_Sin:U2_rom_14B_Sin|altsyncram:altsyncram_component                                             ; work         ;
+;          |altsyncram_vhb1:auto_generated|     ; 16 (2)      ; 2 (2)                     ; 0 (0)         ; 229376      ; 28   ; 0            ; 0       ; 0         ; 0    ; 0            ; 11 (0)       ; 2 (2)             ; 3 (0)            ; |DAC904_WriteTEST|rom_14B_Sin:U2_rom_14B_Sin|altsyncram:altsyncram_component|altsyncram_vhb1:auto_generated              ; work         ;
+;             |mux_gob:mux2|                    ; 14 (14)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 11 (11)      ; 0 (0)             ; 3 (3)            ; |DAC904_WriteTEST|rom_14B_Sin:U2_rom_14B_Sin|altsyncram:altsyncram_component|altsyncram_vhb1:auto_generated|mux_gob:mux2 ; work         ;
 +-----------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+--------------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -846,6 +847,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; IO_data[11] ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; IO_data[12] ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; IO_data[13] ; Output   ; --            ; --            ; --                    ; --  ; --   ;
+; dac_gnd     ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; rstn        ; Input    ; (0) 0 ps      ; --            ; --                    ; --  ; --   ;
 ; clk         ; Input    ; (0) 0 ps      ; --            ; --                    ; --  ; --   ;
 ; mcu_uart_rx ; Input    ; --            ; --            ; (0) 0 ps              ; --  ; --   ;
@@ -868,23 +870,23 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------------------------------------------------------------------+--------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
 ; Name                                                                                           ; Location           ; Fan-Out ; Usage                     ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +------------------------------------------------------------------------------------------------+--------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
-; PhaseAccumulator:U1_PhaseAccumulator|PhaseSum[31]                                              ; FF_X17_Y13_N31     ; 30      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; UartRx:U4_UartRx|rx_data[7]~0                                                                  ; LCCOMB_X21_Y18_N14 ; 9       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; UartRx:U4_UartRx|rx_done                                                                       ; FF_X21_Y16_N17     ; 16      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; always1~0                                                                                      ; LCCOMB_X19_Y14_N22 ; 44      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; amp_scale_ctrl[0]~2                                                                            ; LCCOMB_X19_Y16_N24 ; 11      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; PhaseAccumulator:U1_PhaseAccumulator|PhaseSum[31]                                              ; FF_X17_Y17_N31     ; 30      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; UartRx:U4_UartRx|rx_data[7]~0                                                                  ; LCCOMB_X24_Y20_N28 ; 9       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; UartRx:U4_UartRx|rx_done                                                                       ; FF_X24_Y19_N25     ; 16      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; always1~0                                                                                      ; LCCOMB_X22_Y17_N30 ; 44      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; amp_scale_ctrl[0]~2                                                                            ; LCCOMB_X22_Y17_N18 ; 11      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
 ; clk                                                                                            ; PIN_M2             ; 2       ; Clock                     ; no     ; --                   ; --               ; --                        ;
 ; clk                                                                                            ; PIN_M2             ; 142     ; Clock                     ; yes    ; Global Clock         ; GCLK4            ; --                        ;
-; phase_step_ctrl[31]~1                                                                          ; LCCOMB_X18_Y16_N6  ; 32      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; phase_step_ctrl[31]~1                                                                          ; LCCOMB_X22_Y17_N0  ; 32      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
 ; pll165m:U0_pll165m_inst|altpll:altpll_component|pll165m_altpll:auto_generated|wire_pll1_clk[1] ; PLL_1              ; 170     ; Clock                     ; yes    ; Global Clock         ; GCLK3            ; --                        ;
 ; rstn                                                                                           ; PIN_M1             ; 282     ; Async. clear, Async. load ; yes    ; Global Clock         ; GCLK0            ; --                        ;
-; uart_cmd[7]~0                                                                                  ; LCCOMB_X18_Y16_N18 ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; uart_data[0]~0                                                                                 ; LCCOMB_X19_Y16_N10 ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; uart_data[15]~1                                                                                ; LCCOMB_X18_Y16_N30 ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; uart_data[23]~3                                                                                ; LCCOMB_X18_Y16_N8  ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; uart_data[31]~2                                                                                ; LCCOMB_X18_Y16_N20 ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; uart_frame_index.000                                                                           ; FF_X19_Y16_N15     ; 10      ; Sync. clear, Sync. load   ; no     ; --                   ; --               ; --                        ;
-; uart_xor[7]~1                                                                                  ; LCCOMB_X19_Y16_N6  ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; uart_cmd[7]~0                                                                                  ; LCCOMB_X23_Y17_N10 ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; uart_data[0]~0                                                                                 ; LCCOMB_X23_Y17_N14 ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; uart_data[15]~1                                                                                ; LCCOMB_X23_Y17_N0  ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; uart_data[23]~3                                                                                ; LCCOMB_X23_Y17_N30 ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; uart_data[31]~2                                                                                ; LCCOMB_X23_Y17_N26 ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; uart_frame_index.000                                                                           ; FF_X23_Y19_N7      ; 10      ; Sync. clear, Sync. load   ; no     ; --                   ; --               ; --                        ;
+; uart_xor[7]~1                                                                                  ; LCCOMB_X23_Y19_N12 ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
 +------------------------------------------------------------------------------------------------+--------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
 
 
@@ -894,7 +896,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Name                                                                                           ; Location ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +------------------------------------------------------------------------------------------------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 ; clk                                                                                            ; PIN_M2   ; 142     ; 0                                    ; Global Clock         ; GCLK4            ; --                        ;
-; pll165m:U0_pll165m_inst|altpll:altpll_component|pll165m_altpll:auto_generated|wire_pll1_clk[1] ; PLL_1    ; 170     ; 19                                   ; Global Clock         ; GCLK3            ; --                        ;
+; pll165m:U0_pll165m_inst|altpll:altpll_component|pll165m_altpll:auto_generated|wire_pll1_clk[1] ; PLL_1    ; 170     ; 44                                   ; Global Clock         ; GCLK3            ; --                        ;
 ; rstn                                                                                           ; PIN_M1   ; 282     ; 0                                    ; Global Clock         ; GCLK0            ; --                        ;
 +------------------------------------------------------------------------------------------------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 
@@ -1531,13 +1533,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------------------------------------------------------------------------------------+---------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fitter RAM Summary                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ;
-+------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+--------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+-----------------+-----------------+---------------+
-; Name                                                                                                 ; Type ; Mode ; Clock Mode   ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Port A Input Registers ; Port A Output Registers ; Port B Input Registers ; Port B Output Registers ; Size   ; Implementation Port A Depth ; Implementation Port A Width ; Implementation Port B Depth ; Implementation Port B Width ; Implementation Bits ; M9Ks ; MIF                                   ; Location                                                                                                                                                                                                                                                                                                                                                                                                                                                 ; Mixed Width RDW Mode ; Port A RDW Mode ; Port B RDW Mode ; Fits in MLABs ;
-+------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+--------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+-----------------+-----------------+---------------+
-; rom_14B_Sin:U2_rom_14B_Sin|altsyncram:altsyncram_component|altsyncram_vhb1:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; Single Clock ; 16384        ; 14           ; --           ; --           ; yes                    ; yes                     ; --                     ; --                      ; 229376 ; 16384                       ; 14                          ; --                          ; --                          ; 229376              ; 28   ; ../../ROM/ROM_14B_SIN/ROM_14B_SIN.mif ; M9K_X27_Y9_N0, M9K_X15_Y14_N0, M9K_X15_Y16_N0, M9K_X15_Y9_N0, M9K_X15_Y8_N0, M9K_X15_Y18_N0, M9K_X27_Y19_N0, M9K_X15_Y10_N0, M9K_X27_Y7_N0, M9K_X27_Y17_N0, M9K_X27_Y18_N0, M9K_X27_Y16_N0, M9K_X27_Y12_N0, M9K_X27_Y14_N0, M9K_X15_Y20_N0, M9K_X27_Y20_N0, M9K_X15_Y15_N0, M9K_X15_Y7_N0, M9K_X15_Y13_N0, M9K_X15_Y17_N0, M9K_X15_Y11_N0, M9K_X27_Y15_N0, M9K_X27_Y8_N0, M9K_X15_Y19_N0, M9K_X27_Y13_N0, M9K_X27_Y10_N0, M9K_X15_Y12_N0, M9K_X27_Y11_N0 ; Don't care           ; Old data        ; Old data        ; No - Unknown  ;
-+------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+--------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+-----------------+-----------------+---------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter RAM Summary                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ;
++------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+--------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+-----------------+-----------------+---------------+
+; Name                                                                                                 ; Type ; Mode ; Clock Mode   ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Port A Input Registers ; Port A Output Registers ; Port B Input Registers ; Port B Output Registers ; Size   ; Implementation Port A Depth ; Implementation Port A Width ; Implementation Port B Depth ; Implementation Port B Width ; Implementation Bits ; M9Ks ; MIF                                   ; Location                                                                                                                                                                                                                                                                                                                                                                                                                                           ; Mixed Width RDW Mode ; Port A RDW Mode ; Port B RDW Mode ; Fits in MLABs ;
++------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+--------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+-----------------+-----------------+---------------+
+; rom_14B_Sin:U2_rom_14B_Sin|altsyncram:altsyncram_component|altsyncram_vhb1:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; Single Clock ; 16384        ; 14           ; --           ; --           ; yes                    ; yes                     ; --                     ; --                      ; 229376 ; 16384                       ; 14                          ; --                          ; --                          ; 229376              ; 28   ; ../../ROM/ROM_14B_SIN/ROM_14B_SIN.mif ; M9K_X27_Y17_N0, M9K_X27_Y6_N0, M9K_X27_Y16_N0, M9K_X15_Y11_N0, M9K_X15_Y12_N0, M9K_X15_Y13_N0, M9K_X15_Y4_N0, M9K_X15_Y14_N0, M9K_X15_Y7_N0, M9K_X15_Y15_N0, M9K_X15_Y10_N0, M9K_X27_Y10_N0, M9K_X27_Y11_N0, M9K_X15_Y16_N0, M9K_X27_Y7_N0, M9K_X15_Y17_N0, M9K_X27_Y8_N0, M9K_X27_Y13_N0, M9K_X15_Y6_N0, M9K_X27_Y5_N0, M9K_X15_Y9_N0, M9K_X27_Y12_N0, M9K_X27_Y14_N0, M9K_X15_Y5_N0, M9K_X27_Y15_N0, M9K_X27_Y9_N0, M9K_X27_Y4_N0, M9K_X15_Y8_N0 ; Don't care           ; Old data        ; Old data        ; No - Unknown  ;
++------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+--------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+-----------------+-----------------+---------------+
 Note: Fitter may spread logical memories into multiple blocks to improve timing. The actual required RAM blocks can be found in the Fitter Resource Usage section.
 
 
@@ -3619,8 +3621,8 @@ RAM content values are presented in the following format: (Binary) (Octal) (Deci
 +-----------------------------------------------------+----------------------------+--------------------+---------------------+--------------------------------+-----------------------+-----------------------+-------------------+-----------------+
 ; Name                                                ; Mode                       ; Location           ; Sign Representation ; Has Input Shift Register Chain ; Data A Input Register ; Data B Input Register ; Pipeline Register ; Output Register ;
 +-----------------------------------------------------+----------------------------+--------------------+---------------------+--------------------------------+-----------------------+-----------------------+-------------------+-----------------+
-; lpm_mult:Mult0|mult_16t:auto_generated|mac_out2     ; Simple Multiplier (18-bit) ; DSPOUT_X20_Y12_N2  ;                     ; No                             ;                       ;                       ;                   ; yes             ;
-;    lpm_mult:Mult0|mult_16t:auto_generated|mac_mult1 ;                            ; DSPMULT_X20_Y12_N0 ; Signed              ;                                ; yes                   ; no                    ; no                ;                 ;
+; lpm_mult:Mult0|mult_16t:auto_generated|mac_out2     ; Simple Multiplier (18-bit) ; DSPOUT_X20_Y13_N2  ;                     ; No                             ;                       ;                       ;                   ; yes             ;
+;    lpm_mult:Mult0|mult_16t:auto_generated|mac_mult1 ;                            ; DSPMULT_X20_Y13_N0 ; Signed              ;                                ; yes                   ; no                    ; no                ;                 ;
 +-----------------------------------------------------+----------------------------+--------------------+---------------------+--------------------------------+-----------------------+-----------------------+-------------------+-----------------+
 
 
@@ -3629,115 +3631,115 @@ RAM content values are presented in the following format: (Binary) (Octal) (Deci
 +-----------------------+------------------------+
 ; Routing Resource Type ; Usage                  ;
 +-----------------------+------------------------+
-; Block interconnects   ; 749 / 32,401 ( 2 % )   ;
-; C16 interconnects     ; 17 / 1,326 ( 1 % )     ;
-; C4 interconnects      ; 315 / 21,816 ( 1 % )   ;
-; Direct links          ; 120 / 32,401 ( < 1 % ) ;
+; Block interconnects   ; 770 / 32,401 ( 2 % )   ;
+; C16 interconnects     ; 19 / 1,326 ( 1 % )     ;
+; C4 interconnects      ; 295 / 21,816 ( 1 % )   ;
+; Direct links          ; 124 / 32,401 ( < 1 % ) ;
 ; Global clocks         ; 3 / 10 ( 30 % )        ;
-; Local interconnects   ; 202 / 10,320 ( 2 % )   ;
-; R24 interconnects     ; 13 / 1,289 ( 1 % )     ;
-; R4 interconnects      ; 353 / 28,186 ( 1 % )   ;
+; Local interconnects   ; 187 / 10,320 ( 2 % )   ;
+; R24 interconnects     ; 21 / 1,289 ( 2 % )     ;
+; R4 interconnects      ; 391 / 28,186 ( 1 % )   ;
 +-----------------------+------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Logic Elements                                                         ;
 +---------------------------------------------+------------------------------+
-; Number of Logic Elements  (Average = 13.50) ; Number of LABs  (Total = 26) ;
+; Number of Logic Elements  (Average = 12.43) ; Number of LABs  (Total = 28) ;
 +---------------------------------------------+------------------------------+
-; 1                                           ; 0                            ;
-; 2                                           ; 0                            ;
-; 3                                           ; 1                            ;
-; 4                                           ; 1                            ;
+; 1                                           ; 2                            ;
+; 2                                           ; 1                            ;
+; 3                                           ; 0                            ;
+; 4                                           ; 0                            ;
 ; 5                                           ; 0                            ;
-; 6                                           ; 0                            ;
+; 6                                           ; 1                            ;
 ; 7                                           ; 2                            ;
 ; 8                                           ; 0                            ;
-; 9                                           ; 0                            ;
-; 10                                          ; 1                            ;
-; 11                                          ; 0                            ;
-; 12                                          ; 1                            ;
-; 13                                          ; 3                            ;
-; 14                                          ; 1                            ;
+; 9                                           ; 1                            ;
+; 10                                          ; 0                            ;
+; 11                                          ; 2                            ;
+; 12                                          ; 0                            ;
+; 13                                          ; 2                            ;
+; 14                                          ; 2                            ;
 ; 15                                          ; 1                            ;
-; 16                                          ; 15                           ;
+; 16                                          ; 14                           ;
 +---------------------------------------------+------------------------------+
 
 
 +-------------------------------------------------------------------+
 ; LAB-wide Signals                                                  ;
 +------------------------------------+------------------------------+
-; LAB-wide Signals  (Average = 2.50) ; Number of LABs  (Total = 26) ;
+; LAB-wide Signals  (Average = 2.36) ; Number of LABs  (Total = 28) ;
 +------------------------------------+------------------------------+
-; 1 Async. clear                     ; 25                           ;
-; 1 Clock                            ; 18                           ;
-; 1 Clock enable                     ; 6                            ;
+; 1 Async. clear                     ; 26                           ;
+; 1 Clock                            ; 20                           ;
+; 1 Clock enable                     ; 5                            ;
 ; 1 Sync. clear                      ; 1                            ;
 ; 2 Clock enables                    ; 8                            ;
-; 2 Clocks                           ; 7                            ;
+; 2 Clocks                           ; 6                            ;
 +------------------------------------+------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Signals Sourced  (Average = 22.96) ; Number of LABs  (Total = 26) ;
+; Number of Signals Sourced  (Average = 21.25) ; Number of LABs  (Total = 28) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
-; 1                                            ; 0                            ;
+; 1                                            ; 2                            ;
 ; 2                                            ; 0                            ;
 ; 3                                            ; 0                            ;
 ; 4                                            ; 1                            ;
 ; 5                                            ; 0                            ;
 ; 6                                            ; 0                            ;
 ; 7                                            ; 0                            ;
-; 8                                            ; 1                            ;
+; 8                                            ; 0                            ;
 ; 9                                            ; 0                            ;
-; 10                                           ; 0                            ;
+; 10                                           ; 1                            ;
 ; 11                                           ; 0                            ;
 ; 12                                           ; 1                            ;
-; 13                                           ; 0                            ;
-; 14                                           ; 1                            ;
-; 15                                           ; 0                            ;
+; 13                                           ; 1                            ;
+; 14                                           ; 0                            ;
+; 15                                           ; 1                            ;
 ; 16                                           ; 1                            ;
-; 17                                           ; 0                            ;
-; 18                                           ; 2                            ;
+; 17                                           ; 1                            ;
+; 18                                           ; 0                            ;
 ; 19                                           ; 1                            ;
-; 20                                           ; 2                            ;
-; 21                                           ; 0                            ;
-; 22                                           ; 0                            ;
-; 23                                           ; 0                            ;
-; 24                                           ; 3                            ;
+; 20                                           ; 1                            ;
+; 21                                           ; 1                            ;
+; 22                                           ; 1                            ;
+; 23                                           ; 1                            ;
+; 24                                           ; 0                            ;
 ; 25                                           ; 1                            ;
-; 26                                           ; 2                            ;
+; 26                                           ; 1                            ;
 ; 27                                           ; 2                            ;
-; 28                                           ; 0                            ;
-; 29                                           ; 2                            ;
+; 28                                           ; 4                            ;
+; 29                                           ; 1                            ;
 ; 30                                           ; 2                            ;
 ; 31                                           ; 1                            ;
-; 32                                           ; 3                            ;
+; 32                                           ; 2                            ;
 +----------------------------------------------+------------------------------+
 
 
 +--------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                        ;
 +-------------------------------------------------+------------------------------+
-; Number of Signals Sourced Out  (Average = 8.88) ; Number of LABs  (Total = 26) ;
+; Number of Signals Sourced Out  (Average = 8.54) ; Number of LABs  (Total = 28) ;
 +-------------------------------------------------+------------------------------+
 ; 0                                               ; 1                            ;
-; 1                                               ; 0                            ;
-; 2                                               ; 1                            ;
-; 3                                               ; 2                            ;
-; 4                                               ; 3                            ;
+; 1                                               ; 2                            ;
+; 2                                               ; 2                            ;
+; 3                                               ; 0                            ;
+; 4                                               ; 4                            ;
 ; 5                                               ; 1                            ;
 ; 6                                               ; 0                            ;
-; 7                                               ; 1                            ;
-; 8                                               ; 3                            ;
+; 7                                               ; 2                            ;
+; 8                                               ; 1                            ;
 ; 9                                               ; 2                            ;
-; 10                                              ; 4                            ;
-; 11                                              ; 2                            ;
-; 12                                              ; 1                            ;
-; 13                                              ; 0                            ;
+; 10                                              ; 1                            ;
+; 11                                              ; 6                            ;
+; 12                                              ; 0                            ;
+; 13                                              ; 1                            ;
 ; 14                                              ; 1                            ;
 ; 15                                              ; 0                            ;
 ; 16                                              ; 2                            ;
@@ -3751,29 +3753,29 @@ RAM content values are presented in the following format: (Binary) (Octal) (Deci
 +-----------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Distinct Inputs  (Average = 13.42) ; Number of LABs  (Total = 26) ;
+; Number of Distinct Inputs  (Average = 13.07) ; Number of LABs  (Total = 28) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
 ; 1                                            ; 0                            ;
 ; 2                                            ; 0                            ;
-; 3                                            ; 0                            ;
-; 4                                            ; 0                            ;
-; 5                                            ; 0                            ;
-; 6                                            ; 1                            ;
+; 3                                            ; 1                            ;
+; 4                                            ; 1                            ;
+; 5                                            ; 1                            ;
+; 6                                            ; 0                            ;
 ; 7                                            ; 0                            ;
-; 8                                            ; 3                            ;
-; 9                                            ; 4                            ;
-; 10                                           ; 1                            ;
+; 8                                            ; 1                            ;
+; 9                                            ; 3                            ;
+; 10                                           ; 2                            ;
 ; 11                                           ; 2                            ;
-; 12                                           ; 2                            ;
-; 13                                           ; 2                            ;
-; 14                                           ; 3                            ;
+; 12                                           ; 4                            ;
+; 13                                           ; 1                            ;
+; 14                                           ; 2                            ;
 ; 15                                           ; 0                            ;
-; 16                                           ; 1                            ;
-; 17                                           ; 3                            ;
+; 16                                           ; 4                            ;
+; 17                                           ; 2                            ;
 ; 18                                           ; 1                            ;
-; 19                                           ; 1                            ;
-; 20                                           ; 1                            ;
+; 19                                           ; 2                            ;
+; 20                                           ; 0                            ;
 ; 21                                           ; 0                            ;
 ; 22                                           ; 0                            ;
 ; 23                                           ; 0                            ;
@@ -3787,8 +3789,7 @@ RAM content values are presented in the following format: (Binary) (Octal) (Deci
 ; 31                                           ; 0                            ;
 ; 32                                           ; 0                            ;
 ; 33                                           ; 0                            ;
-; 34                                           ; 0                            ;
-; 35                                           ; 1                            ;
+; 34                                           ; 1                            ;
 +----------------------------------------------+------------------------------+
 
 
@@ -3849,9 +3850,9 @@ RAM content values are presented in the following format: (Binary) (Octal) (Deci
 +--------------------+-----------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+
 ; Pin/Rules          ; IO_000001 ; IO_000002    ; IO_000003 ; IO_000004    ; IO_000005    ; IO_000006 ; IO_000007 ; IO_000008    ; IO_000009 ; IO_000010 ; IO_000011    ; IO_000012    ; IO_000013    ; IO_000014    ; IO_000015    ; IO_000018    ; IO_000019    ; IO_000020    ; IO_000021    ; IO_000022    ; IO_000023    ; IO_000024    ; IO_000026    ; IO_000027    ; IO_000045    ; IO_000046    ; IO_000047    ; IO_000033 ; IO_000034    ; IO_000042    ;
 +--------------------+-----------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+
-; Total Pass         ; 18        ; 1            ; 18        ; 0            ; 0            ; 18        ; 18        ; 0            ; 18        ; 18        ; 0            ; 15           ; 0            ; 1            ; 3            ; 0            ; 15           ; 3            ; 1            ; 0            ; 0            ; 15           ; 0            ; 0            ; 0            ; 0            ; 0            ; 18        ; 0            ; 0            ;
+; Total Pass         ; 19        ; 1            ; 19        ; 0            ; 0            ; 19        ; 19        ; 0            ; 19        ; 19        ; 0            ; 16           ; 0            ; 1            ; 3            ; 0            ; 16           ; 3            ; 1            ; 0            ; 0            ; 16           ; 0            ; 0            ; 0            ; 0            ; 0            ; 19        ; 0            ; 0            ;
 ; Total Unchecked    ; 0         ; 0            ; 0         ; 0            ; 0            ; 0         ; 0         ; 0            ; 0         ; 0         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0            ;
-; Total Inapplicable ; 0         ; 17           ; 0         ; 18           ; 18           ; 0         ; 0         ; 18           ; 0         ; 0         ; 18           ; 3            ; 18           ; 17           ; 15           ; 18           ; 3            ; 15           ; 17           ; 18           ; 18           ; 3            ; 18           ; 18           ; 18           ; 18           ; 18           ; 0         ; 18           ; 18           ;
+; Total Inapplicable ; 0         ; 18           ; 0         ; 19           ; 19           ; 0         ; 0         ; 19           ; 0         ; 0         ; 19           ; 3            ; 19           ; 18           ; 16           ; 19           ; 3            ; 16           ; 18           ; 19           ; 19           ; 3            ; 19           ; 19           ; 19           ; 19           ; 19           ; 0         ; 19           ; 19           ;
 ; Total Fail         ; 0         ; 0            ; 0         ; 0            ; 0            ; 0         ; 0         ; 0            ; 0         ; 0         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0            ;
 ; clk_driver         ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; IO_data[0]         ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
@@ -3868,6 +3869,7 @@ RAM content values are presented in the following format: (Binary) (Octal) (Deci
 ; IO_data[11]        ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; IO_data[12]        ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; IO_data[13]        ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; dac_gnd            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; rstn               ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; clk                ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; mcu_uart_rx        ; Pass      ; Pass         ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
@@ -3920,17 +3922,20 @@ Note: For more information on problematic transfers, consider running the Fitter
 This will disable optimization of problematic paths and expose them for further analysis using the TimeQuest Timing Analyzer.
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Estimated Delay Added for Hold Timing Details                                                                                                                                                      ;
-+---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+-------------------+
-; Source Register                                   ; Destination Register                                                                                                       ; Delay Added in ns ;
-+---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+-------------------+
-; PhaseAccumulator:U1_PhaseAccumulator|PhaseSum[20] ; rom_14B_Sin:U2_rom_14B_Sin|altsyncram:altsyncram_component|altsyncram_vhb1:auto_generated|ram_block1a23~porta_address_reg0 ; 0.017             ;
-; dacScaledReg[0]                                   ; IO_data[0]                                                                                                                 ; 0.015             ;
-; dacScaledReg[14]                                  ; dacSumReg[7]                                                                                                               ; 0.015             ;
-; PhaseAccumulator:U1_PhaseAccumulator|PhaseSum[18] ; rom_14B_Sin:U2_rom_14B_Sin|altsyncram:altsyncram_component|altsyncram_vhb1:auto_generated|ram_block1a23~porta_address_reg0 ; 0.014             ;
-+---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+-------------------+
-Note: This table only shows the top 4 path(s) that have the largest delay added for hold.
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Details                                                                                                                                                     ;
++---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+-------------------+
+; Source Register                                   ; Destination Register                                                                                                      ; Delay Added in ns ;
++---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+-------------------+
+; PhaseAccumulator:U1_PhaseAccumulator|PhaseSum[20] ; rom_14B_Sin:U2_rom_14B_Sin|altsyncram:altsyncram_component|altsyncram_vhb1:auto_generated|ram_block1a7~porta_address_reg0 ; 0.033             ;
+; dacScaledReg[14]                                  ; IO_data[0]                                                                                                                ; 0.033             ;
+; dacScaledReg[13]                                  ; dacSumReg[10]                                                                                                             ; 0.033             ;
+; dacScaledReg[0]                                   ; IO_data[0]                                                                                                                ; 0.031             ;
+; PhaseAccumulator:U1_PhaseAccumulator|PhaseSum[18] ; rom_14B_Sin:U2_rom_14B_Sin|altsyncram:altsyncram_component|altsyncram_vhb1:auto_generated|ram_block1a7~porta_address_reg0 ; 0.030             ;
+; PhaseAccumulator:U1_PhaseAccumulator|PhaseSum[29] ; rom_14B_Sin:U2_rom_14B_Sin|altsyncram:altsyncram_component|altsyncram_vhb1:auto_generated|ram_block1a7~porta_address_reg0 ; 0.018             ;
+; uart_data[9]                                      ; amp_scale_ctrl[9]                                                                                                         ; 0.013             ;
++---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+-------------------+
+Note: This table only shows the top 7 path(s) that have the largest delay added for hold.
 
 
 +-----------------+
@@ -3982,7 +3987,7 @@ Info (176235): Finished register packing
     Extra Info (176218): Packed 16 registers into blocks of type Embedded multiplier output
     Extra Info (176218): Packed 1 registers into blocks of type I/O Input Buffer
 Warning (15064): PLL "pll165m:U0_pll165m_inst|altpll:altpll_component|pll165m_altpll:auto_generated|pll1" output port clk[1] feeds output pin "clk_driver~output" via non-dedicated routing -- jitter performance depends on switching rate of other design elements. Use PLL dedicated clock outputs to ensure jitter performance
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:01
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:02
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info (170191): Fitter placement operations beginning
@@ -3994,7 +3999,7 @@ Info (170195): Router estimated average interconnect usage is 1% of the availabl
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (11888): Total time spent on timing analysis during the Fitter is 0.03 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.05 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -4003,17 +4008,17 @@ Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Warning (169177): 1 pins must meet Altera requirements for 3.3-, 3.0-, and 2.5-V interfaces. For more information, refer to AN 447: Interfacing Cyclone IV E Devices with 3.3/3.0/2.5-V LVTTL/LVCMOS I/O Systems.
     Info (169178): Pin mcu_uart_rx uses I/O standard 3.3-V LVTTL at A8
-Info (144001): Generated suppressed messages file D:/diansai2025/DAC904_HighSpeedDAC_V1.6-SinExample/prj/DAC904_HighSpeedDAC.fit.smsg
+Info (144001): Generated suppressed messages file D:/diansai2025/25_diansai/FPGA_sendwave/prj/DAC904_HighSpeedDAC.fit.smsg
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 11 warnings
-    Info: Peak virtual memory: 5820 megabytes
-    Info: Processing ended: Sat May 30 22:05:07 2026
-    Info: Elapsed time: 00:00:10
+    Info: Peak virtual memory: 5816 megabytes
+    Info: Processing ended: Sat Jun 13 22:53:49 2026
+    Info: Elapsed time: 00:00:09
     Info: Total CPU time (on all processors): 00:00:02
 
 
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in D:/diansai2025/DAC904_HighSpeedDAC_V1.6-SinExample/prj/DAC904_HighSpeedDAC.fit.smsg.
+The suppressed messages can be found in D:/diansai2025/25_diansai/FPGA_sendwave/prj/DAC904_HighSpeedDAC.fit.smsg.
 
 

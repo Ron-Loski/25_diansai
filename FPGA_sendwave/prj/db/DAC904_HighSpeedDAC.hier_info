@@ -17,6 +17,7 @@ IO_data[10] << DAC904_WriteModule:U3_DAC904_WriteModule.outputData
 IO_data[11] << DAC904_WriteModule:U3_DAC904_WriteModule.outputData
 IO_data[12] << DAC904_WriteModule:U3_DAC904_WriteModule.outputData
 IO_data[13] << DAC904_WriteModule:U3_DAC904_WriteModule.outputData
+dac_gnd << <GND>
 
 
 |DAC904_WriteTEST|pll165m:U0_pll165m_inst

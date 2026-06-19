@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP4CE10F17) Path("D:/diansai2025/DAC904_HighSpeedDAC_V1.6-SinExample/prj/") File("DAC904_HighSpeedDAC.sof") MfrSpec(OpMask(1));
+		Device PartName(EP4CE10F17) Path("D:/diansai2025/25_diansai/FPGA_sendwave/prj/") File("DAC904_HighSpeedDAC.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

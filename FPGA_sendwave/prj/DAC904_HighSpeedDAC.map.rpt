@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DAC904_HighSpeedDAC
-Sat Jun 13 22:53:39 2026
+Fri Jun 19 15:35:36 2026
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Full Version
 
 
@@ -59,7 +59,7 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Jun 13 22:53:39 2026       ;
+; Analysis & Synthesis Status        ; Successful - Fri Jun 19 15:35:36 2026       ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Full Version ;
 ; Revision Name                      ; DAC904_HighSpeedDAC                         ;
 ; Top-level Entity Name              ; DAC904_WriteTEST                            ;
@@ -1001,7 +1001,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -1011,7 +1011,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Full Version
-    Info: Processing started: Sat Jun 13 22:53:35 2026
+    Info: Processing started: Fri Jun 19 15:35:34 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DAC904_HighSpeedDAC -c DAC904_HighSpeedDAC
 Info (11104): Parallel Compilation has detected 16 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 10 of the 10 physical processors detected instead.
 Info (12021): Found 1 design units, including 1 entities, in source file /diansai2025/25_diansai/fpga_sendwave/rtl/phaseaccumulator.v
@@ -1157,8 +1157,8 @@ Info (21057): Implemented 447 device resources after synthesis - the final resou
     Info (21062): Implemented 2 DSP elements
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 4 warnings
     Info: Peak virtual memory: 4682 megabytes
-    Info: Processing ended: Sat Jun 13 22:53:39 2026
-    Info: Elapsed time: 00:00:04
+    Info: Processing ended: Fri Jun 19 15:35:37 2026
+    Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:01
 
 
